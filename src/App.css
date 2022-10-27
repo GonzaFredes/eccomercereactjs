@@ -1,0 +1,92 @@
+.App {
+  width: 100%;
+  text-align: center;
+}
+
+.Logo {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 2%;
+}
+
+.Logo-img {
+  width: 5rem;
+}
+
+.App-logo {
+  width: 8rem;
+  color: white;
+  pointer-events: none;
+  justify-content: start;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(249, 208, 59);
+  justify-content: space-between;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.botonreact {
+  width: 70px;
+  padding: 3px;
+  background-color: #dadde3;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 2%;
+}
+
+.Botonera {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Secciones {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  justify-content: end;
+}
+
+.Secciones li {
+  list-style: none;
+  margin-right: 20px;
+}
+
+.Secciones li a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-item {
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.carrodeCompras {
+  margin-right: 2%;
+}
+
+.carritoIcono {
+  width: 3rem;
+  margin-right: 10%;
+}
+  
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
