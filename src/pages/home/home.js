@@ -7,26 +7,44 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
     const startProducts = useRef(1);
     const endProducts = useRef(20);
+    const [tenProducts, setTenProducts] = useState([]);
+    const [posicion, setPosicion] = useState(0);
+
+    const getProducts = async () => {
+        try {
+            const data = await fetch('https://6367c7d2d1d09a8fa61a60c0.mockapi.io/productos')
+            const dataProducts = await data.json();
+            setProducts(dataProducts);
+            const auxProducts = []
+            for  (let index = 0; index < 10; index++) {
+                auxProducts.push(dataProducts[index])
+            }
+            setTenProducts(auxProducts)
+            setIsLoading(false)
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     useEffect(() => {
-        const getProducts = async () => {
-            try {
-                const data = await fetch('https://6367c7d2d1d09a8fa61a60c0.mockapi.io/productos')
-                const dataProducts = await data.json();
-                setProducts(dataProducts);
-            } catch (error) {
-                console.log(error);
-            }
-        }
         getProducts();
     }, []);
     console.warn('products', products);
 
-
-    const handleNext = async () => {
-        startProducts.current += 20;
-        endProducts.current += 20;
+    useEffect(() => {
         getProducts(startProducts.current, endProducts.current);
+    }, []);
+
+
+    const handleNext = () => {
+        setIsLoading(true)
+        setPosicion(posicion+8)
+        const auxProducts = []
+        for (let index = 0; index < 8; index++) {
+            auxProducts.push(products[posicion+index])
+        }
+        setTenProducts(auxProducts)
+        setIsLoading(false)
     }
 
     const handlePrev = async () => {
@@ -43,7 +61,7 @@ const Home = () => {
             ) : (
                 <>
                     <div className="list-container">
-                        {products.map(product => (
+                        {tenProducts.map(product => (
                             <Card key={product.id} item={product} />
                         ))}
                     </div>
