@@ -10,7 +10,7 @@
 }
 
 .Logo-img {
-  width: 5rem;
+  width: 3.5rem;
 }
 
 .App-logo {
@@ -76,16 +76,14 @@
 }
 
 .carritoIcono {
-  width: 3rem;
+  width: 2rem;
   margin-right: 10%;
 }
-  
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.counter {
+  width: fit-content;
+  background-color:#f6e336;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
 }

@@ -1,5 +1,5 @@
-import logo from '../images/logo.png';
-import CartWidget from './CartWidget.js';
+import logo from './images/logo.png';
+import CartWidget from '../CartWidget/CartWidget.js';
 
 function NavBar() {
   return (
