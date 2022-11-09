@@ -38,18 +38,19 @@ const Home = () => {
 
     const handleNext = () => {
         setIsLoading(true)
-        setPosicion(posicion+8)
+        setPosicion(posicion+10)
         const auxProducts = []
-        for (let index = 0; index < 8; index++) {
+        for (let index = 0; index < 10; index++) {
             auxProducts.push(products[posicion+index])
         }
         setTenProducts(auxProducts)
         setIsLoading(false)
+        startProducts.current += 10;
     }
 
     const handlePrev = async () => {
-        startProducts.current -= 20;
-        endProducts.current -= 20;
+        startProducts.current -= 10;
+        endProducts.current -= 10;
         getProducts(startProducts.current, endProducts.current);
     }
 
@@ -67,7 +68,7 @@ const Home = () => {
                     </div>
                     <div className="button-container">
                         <button disabled={startProducts.current <= 1 || isLoading} onClick={handlePrev}>Previous</button>
-                        <button disabled={endProducts.current >= 300 || isLoading} onClick={handleNext}>Next</button>
+                        <button disabled={endProducts.current >= 49 || isLoading} onClick={handleNext}>Next</button>
                     </div>
                 </>
             )}
