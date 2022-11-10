@@ -1,0 +1,35 @@
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    display: flex;
+}
+
+.container img{
+    width: 30%;
+    border-radius: 16px;
+    margin-right: 20px;
+    height: 80%;
+}
+
+.detail__img{
+    width: 50%;
+}
+
+.content{
+    width: 100%;
+    color: aliceblue;
+}
+
+.count-cont{
+    display: flex;
+    justify-content: center;
+}
+

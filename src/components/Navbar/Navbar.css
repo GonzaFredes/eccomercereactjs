@@ -1,0 +1,50 @@
+body{
+    background-color:#252525;
+
+}
+
+.Logo-img{
+    padding-left: 20px;
+    width: 4rem;
+}
+
+.nav{
+    overflow: hidden;
+    background-color: #e8ed36;
+    font-family: Arial;
+}
+
+.nav a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navList{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.navList li{
+    list-style: none;
+    padding: 10px;
+}
+
+.navList li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.navList li:hover{
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.navList li a:hover{
+    color: #000000;
+    
+}

@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from "react";  
-import ItemList from "../ItemList/ItemList";
+import React,{useState, useEffect} from "react";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import '../ItemListContainer/ItemListContainer.css';
 
 const prod = [
     {
@@ -198,32 +197,27 @@ const prod = [
     },
 ]
 
-const ItemListContainer =({texto})=>{
-    const [data , setData] = useState([]);
-    const {categoriaId} = useParams();
+
+const ItemDetailContainer = ()=>{
+    const [data, setData] = useState({});
+    const {detalleId} = useParams();
+
     useEffect(()=>{
         const getData = new Promise (resolve =>{
             setTimeout(() => {
                 resolve(prod)
             }, 1000);
         });
-        if(categoriaId){
-            getData.then(res =>setData(res.filter(prod => prod.category === categoriaId)));
-        }else{
-            getData.then(res =>setData(res))
-        }
+        getData.then(res =>setData(res.find(prod => prod.id === parseInt(detalleId))));
 
 
-    }, [categoriaId])
+    }, [detalleId])
 
-    
     return(
         <>
-        <div className="card-cont">
-        <ItemList data ={data}/>
-        </div>
+        <ItemDetail data = {data}/>
         </>
-    )
+    );
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;
